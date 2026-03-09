@@ -1,0 +1,14 @@
+commit	val_bpb	memory_gb	status	description
+e761377	1.099818	22.3	keep	baseline: depth=8 aspect_ratio=64 batch=64 SDPA
+77a1078	1.169763	20.6	discard	depth=12 aspect=48 batch=32 (deeper narrower, OOM at 64)
+211c499	1.150544	21.2	discard	depth=6 aspect=96 (shallower wider)
+8c499e5	1.853215	33.7	discard	depth=10 aspect=64 batch=64 (too large, only 28 steps)
+d0ad3a9	1.092038	17.2	keep	depth=8 aspect=48 (narrower, more steps, IMPROVEMENT)
+a47d890	1.103372	12.1	discard	depth=8 aspect=32 (too narrow, model too small)
+e2b83b9	1.096421	17.2	discard	depth=8 aspect=40 (same params as 48 due to rounding)
+c4c69d0	1.870044	27.3	discard	depth=10 aspect=48 (too slow, only 31 steps)
+c1ef25a	1.120128	13.4	discard	depth=6 aspect=48 (too shallow)
+906329f	1.112022	22.3	discard	depth=8 aspect=56 (rounds to same dim as 64)
+7b10c89	1.100110	17.2	discard	depth=8 aspect=48 head_dim=64 (smaller heads slightly worse)
+2e210f4	1.120886	7.1	discard	depth=4 aspect=48 (too shallow, 1517 steps but too small)
+b3f9f70	1.102316	24.9	discard	depth=9 aspect=48 (one extra layer too slow)
